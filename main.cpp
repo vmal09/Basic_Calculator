@@ -27,7 +27,7 @@ int main(){
              << "\n7 = Exponentiation"
              << "\n8 = Show Calculation History"
              << "\n9 = Exit"
-             << "\n \n Make a choice: ";
+             << "\n \nMake a choice: ";
 
         if (!(cin >> opr))
         {
@@ -70,9 +70,47 @@ int main(){
             cerr << "Invalid choice. Please select a valid operation." << endl;
             break;
         }
+        
 
         cout << "\n------------------------------\n";
     } while (opr != 9);
 
      return 0;
+}
+
+void add()
+{
+    int n, sum = 0, number;
+
+    // Prompt the user to enter the number of values they want to add
+    cout << "\nHow many numbers you want to add: ";
+
+    // Check if the input is not a positive integer
+    if (!(cin >> n) || n <= 0)
+    {
+        cin.clear(); // Clear the error state of cin
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the rest of the input line
+        cerr << "Invalid input. Please enter a valid positive number of values to add." << endl;
+        return;
+    }
+        // Prompt the user to enter the numbers
+        cout << "\nEnter numbers:\n";
+
+    // Loop to input and add numbers
+    for (int i = 1; i <= n; i++)
+    {
+        if (!(cin >> number)) 
+        {
+            cin.clear(); // Clear the error state of cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the rest of the input line
+            cerr << "Invalid input. Please enter a valid numeric value." << endl;
+            return;
+        }
+
+        sum += number; // Add the entered number to the sum
+    }
+   
+    // Display the sum of the entered numbers
+    cout << "\nSum of the numbers = " << sum << endl;
+    
 }
