@@ -233,18 +233,26 @@ void division()
 void sqr()
 {
     int num1;
+
+    // Prompt the user to enter a number
     cout << "Enter a number to find the Square: ";
 
+    // Check if the input is not a valid numeric value
     if (!(cin >> num1))
     {
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.clear(); // Clear the error state of cin
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the rest of the input line
         cerr << "Invalid input. Please enter a valid numeric value." << endl;
         return;
     }
 
+    // Calculate the square of the entered number
     int square = num1 * num1;
+    
+    // Create a string that contains the expression for the square
     string expression = "Square of " + to_string(num1) + " is: " + to_string(square);
+    
+    // Display the expression and the result (square)
     cout << expression << endl;
 
     
@@ -253,26 +261,34 @@ void sqr()
 void srt()
 {
     float num1;
+
+    // Prompt the user to enter a number
     cout << "Enter the number to find the Square Root: ";
 
+    // Check if the input is not a valid numeric value
     if (!(cin >> num1))
     {
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.clear(); // Clear the error state of cin
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the rest of the input line
         cerr << "Invalid input. Please enter a valid numeric value." << endl;
         return;
     }
 
+    // Check if the entered number is negative
     if (num1 < 0)
     {
-        cerr << "Error: Square root of a negative number is not allowed." << endl;
-        return;
+        cerr << "Error: Square root of a negative number is not allowed." << endl; // Display an error message
+        return; // Exit the function to avoid taking the square root of a negative number
     }
 
+    // Calculate the square root of the entered number
     float squareRoot = sqrt(num1);
+    
+    // Create a string that contains the expression for the square root
     string expression = "Square Root of " + to_string(num1) + " is: " + to_string(squareRoot);
+    
+    // Display the expression and the result (square root)
     cout << expression << endl;
-
     
 }
 
