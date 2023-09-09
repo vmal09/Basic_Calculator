@@ -184,3 +184,46 @@ void multi()
     // Display the result of the multiplication
     cout << "Multiplication of two numbers = " << result << endl;
 }
+
+
+void division()
+{
+    int num1, num2;
+
+    // Prompt the user to enter the first number
+    cout << "Enter the First number: ";
+
+    // Check if the input is not a valid numeric value
+    if (!(cin >> num1))
+    {
+        cin.clear(); // Clear the error state of cin
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the rest of the input line
+        cerr << "Invalid input. Please enter a valid numeric value." << endl; // Display an error message
+        return; 
+    }
+
+    // Prompt the user to enter the second number
+    cout << "Enter the Second number: ";
+
+    // Check if the input is not a valid numeric value
+    if (!(cin >> num2))
+    {
+        cin.clear(); // Clear the error state of cin
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the rest of the input line
+        cerr << "Invalid input. Please enter a valid numeric value." << endl; // Display an error message
+        return; 
+    }
+
+    // Check if the second number is zero (division by zero)
+    if (num2 == 0)
+    {
+        cerr << "Error: Division by zero is not allowed." << endl;
+        return; // Division by zero is not allowed
+    }
+
+    // Calculate the division of the two numbers
+    float result = static_cast<float>(num1) / num2;
+
+    // Display the result of the division
+    cout << "Division of two numbers = " << result << endl;
+}
