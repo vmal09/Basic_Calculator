@@ -227,3 +227,24 @@ void division()
     // Display the result of the division
     cout << "Division of two numbers = " << result << endl;
 }
+
+void sqr()
+{
+    int num1;
+    cout << "Enter a number to find the Square: ";
+
+    if (!(cin >> num1))
+    {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cerr << "Invalid input. Please enter a valid numeric value." << endl;
+        return;
+    }
+
+    int square = num1 * num1;
+    string expression = "Square of " + to_string(num1) + " is: " + to_string(square);
+    cout << expression << endl;
+
+    
+}
+
