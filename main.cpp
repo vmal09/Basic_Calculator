@@ -292,3 +292,40 @@ void srt()
     
 }
 
+void exp()
+{
+    double base, exponent;
+
+    // Prompt the user to enter the base
+    cout << "Enter the base: ";
+
+    // Check if the input is not a valid numeric value for the base
+    if (!(cin >> base))
+    {
+        cin.clear(); // Clear the error state of cin
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the rest of the input line
+        cerr << "Invalid input. Please enter a valid numeric value for the base." << endl; // Display an error message
+        return; 
+    }
+
+    // Prompt the user to enter the exponent
+    cout << "Enter the exponent: ";
+
+    // Check if the input is not a valid numeric value for the exponent
+    if (!(cin >> exponent))
+    {
+        cin.clear(); // Clear the error state of cin
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the rest of the input line
+        cerr << "Invalid input. Please enter a valid numeric value for the exponent." << endl; // Display an error message
+        return; 
+    }
+
+    // Calculate the result of exponentiation using the pow() function
+    double result = pow(base, exponent);
+
+    // Create a string that contains the expression for the exponentiation
+    string expression = to_string(base) + " ^ " + to_string(exponent) + " = " + to_string(result);
+
+    // Display the result of the exponentiation
+    cout << "Exponentiation result = " << result << endl;
+}
