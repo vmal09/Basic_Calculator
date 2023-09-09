@@ -149,3 +149,38 @@ void sub()
     // Display the result of the subtraction
     cout << "Subtraction of the numbers = " << result << endl;
 }
+
+void multi()
+{
+    int num1, num2, result;
+
+    // Prompt the user to enter the first number
+    cout << "Enter the First number: ";
+
+    // Check if the input is not a valid numeric value
+    if (!(cin >> num1))
+    {
+        cin.clear(); // Clear the error state of cin
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the rest of the input line
+        cerr << "Invalid input. Please enter a valid numeric value." << endl; // Display an error message
+        return; 
+    }
+
+    // Prompt the user to enter the second number
+    cout << "Enter the Second number: ";
+
+    // Check if the input is not a valid numeric value
+    if (!(cin >> num2))
+    {
+        cin.clear(); // Clear the error state of cin
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the rest of the input line
+        cerr << "Invalid input. Please enter a valid numeric value." << endl; // Display an error message
+        return; 
+    }
+
+    // Calculate the multiplication of the two numbers
+    result = num1 * num2;
+
+    // Display the result of the multiplication
+    cout << "Multiplication of two numbers = " << result << endl;
+}
