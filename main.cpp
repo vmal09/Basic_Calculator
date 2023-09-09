@@ -1,5 +1,7 @@
 #include <iostream>
 #include <limits>
+#include <cmath>
+
 
 using namespace std;
 
@@ -243,6 +245,32 @@ void sqr()
 
     int square = num1 * num1;
     string expression = "Square of " + to_string(num1) + " is: " + to_string(square);
+    cout << expression << endl;
+
+    
+}
+
+void srt()
+{
+    float num1;
+    cout << "Enter the number to find the Square Root: ";
+
+    if (!(cin >> num1))
+    {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cerr << "Invalid input. Please enter a valid numeric value." << endl;
+        return;
+    }
+
+    if (num1 < 0)
+    {
+        cerr << "Error: Square root of a negative number is not allowed." << endl;
+        return;
+    }
+
+    float squareRoot = sqrt(num1);
+    string expression = "Square Root of " + to_string(num1) + " is: " + to_string(squareRoot);
     cout << expression << endl;
 
     
