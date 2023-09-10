@@ -375,6 +375,8 @@ void exp()
 
 void showHistory()
 {
+    
+    // Check if the history vector is empty
     if (history.empty())
     {
         cout << "Calculation history is empty." << endl;
@@ -382,8 +384,12 @@ void showHistory()
     }
 
     cout << "Calculation History:" << endl;
+
+    // Iterate through each Calculation object in the history vector
     for (const Calculation &calc : history)
     {
+        // Display the expression and operation for each calculation
         cout << calc.expression << " [" << calc.operation << "]" << endl;
     }
 }
+
