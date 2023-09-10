@@ -1,7 +1,9 @@
 #include <iostream>
 #include <limits>
 #include <cmath>
-
+#include <stdexcept>
+#include <vector>
+#include <string>
 
 using namespace std;
 
@@ -14,6 +16,14 @@ void srt();
 void exp();
 void showHistory();
 void exitProgram();
+
+struct Calculation {
+    string operation;
+    string expression;
+    double result;
+};
+
+vector<Calculation> history; // To store calculation history
 
 int main(){
     int opr;
@@ -83,6 +93,7 @@ int main(){
 void add()
 {
     int n, sum = 0, number;
+    string expression = "";
 
     // Prompt the user to enter the number of values they want to add
     cout << "\nHow many numbers you want to add: ";
@@ -110,11 +121,18 @@ void add()
         }
 
         sum += number; // Add the entered number to the sum
+        expression += to_string(number) + " + ";
+
     }
    
+    expression = expression.substr(0, expression.length() - 2); // Remove the trailing " + "
+    expression += " = " + to_string(sum);
+
     // Display the sum of the entered numbers
     cout << "\nSum of the numbers = " << sum << endl;
     
+    Calculation calc = { "Addition", expression, static_cast<double>(sum) };
+    history.push_back(calc);
 }
 
 void sub()
@@ -148,8 +166,14 @@ void sub()
     // Calculate the subtraction of the two numbers
     result = num1 - num2;
 
+    string expression = to_string(num1) + " - " + to_string(num2) + " = " + to_string(result);
+
     // Display the result of the subtraction
     cout << "Subtraction of the numbers = " << result << endl;
+    
+    Calculation calc = { "Subtraction", expression, static_cast<double>(result) };
+    history.push_back(calc);
+
 }
 
 void multi()
@@ -183,8 +207,13 @@ void multi()
     // Calculate the multiplication of the two numbers
     result = num1 * num2;
 
+    string expression = to_string(num1) + " * " + to_string(num2) + " = " + to_string(result);
+
     // Display the result of the multiplication
     cout << "Multiplication of two numbers = " << result << endl;
+
+    Calculation calc = { "Multiplication", expression, static_cast<double>(result) };
+    history.push_back(calc);
 }
 
 
@@ -226,8 +255,13 @@ void division()
     // Calculate the division of the two numbers
     float result = static_cast<float>(num1) / num2;
 
+    string expression = to_string(num1) + " / " + to_string(num2) + " = " + to_string(result);
+
     // Display the result of the division
     cout << "Division of two numbers = " << result << endl;
+    
+    Calculation calc = { "Division", expression, static_cast<double>(result) };
+    history.push_back(calc);
 }
 
 void sqr()
@@ -255,6 +289,8 @@ void sqr()
     // Display the expression and the result (square)
     cout << expression << endl;
 
+    Calculation calc = { "Square", expression, static_cast<double>(square) };
+    history.push_back(calc);
     
 }
 
@@ -290,6 +326,9 @@ void srt()
     // Display the expression and the result (square root)
     cout << expression << endl;
     
+    Calculation calc = { "Square Root", expression, squareRoot };
+    history.push_back(calc);
+
 }
 
 void exp()
@@ -328,4 +367,23 @@ void exp()
 
     // Display the result of the exponentiation
     cout << "Exponentiation result = " << result << endl;
+    
+    Calculation calc = { "Exponentiation", expression, result };
+    history.push_back(calc);
+
+}
+
+void showHistory()
+{
+    if (history.empty())
+    {
+        cout << "Calculation history is empty." << endl;
+        return;
+    }
+
+    cout << "Calculation History:" << endl;
+    for (const Calculation &calc : history)
+    {
+        cout << calc.expression << " [" << calc.operation << "]" << endl;
+    }
 }
