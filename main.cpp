@@ -393,3 +393,8 @@ void showHistory()
     }
 }
 
+void exitProgram()
+{
+    cout << "Exiting the program." << endl;
+    exit(0);
+}
