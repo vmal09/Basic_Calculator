@@ -46,6 +46,8 @@ Before running the calculator, make sure you have a C++ compiler installed on yo
 
 5. You can perform calculations, view calculation history, and exit the program when you are done.
 
+
+
 ### Available Operations
 
 - 1: Addition
@@ -57,6 +59,14 @@ Before running the calculator, make sure you have a C++ compiler installed on yo
 - 7: Exponentiation
 - 8: Show Calculation History
 - 9: Exit
+
+
+
+## Behaviour Showcase
+
+- https://github.com/vmal09/Basic_Calculator/assets/74333739/06fb3f00-5c5a-4f95-8a8e-32f045971fce
+
+
 
 ## Additional Information
 
