@@ -140,7 +140,7 @@ void sub()
     int num1, num2, result;
 
     // Prompt the user to enter the first number
-    cout << "Enter the First number: ";
+    cout << "\nEnter the First number: ";
 
     // Check if the input is not a valid numeric value
     if (!(cin >> num1))
@@ -169,7 +169,7 @@ void sub()
     string expression = to_string(num1) + " - " + to_string(num2) + " = " + to_string(result);
 
     // Display the result of the subtraction
-    cout << "Subtraction of the numbers = " << result << endl;
+    cout << "\nSubtraction of the numbers = " << result << endl;
     
     Calculation calc = { "Subtraction", expression, static_cast<double>(result) };
     history.push_back(calc);
@@ -181,7 +181,7 @@ void multi()
     int num1, num2, result;
 
     // Prompt the user to enter the first number
-    cout << "Enter the First number: ";
+    cout << "\nEnter the First number: ";
 
     // Check if the input is not a valid numeric value
     if (!(cin >> num1))
@@ -210,7 +210,7 @@ void multi()
     string expression = to_string(num1) + " * " + to_string(num2) + " = " + to_string(result);
 
     // Display the result of the multiplication
-    cout << "Multiplication of two numbers = " << result << endl;
+    cout << "\nMultiplication of the numbers = " << result << endl;
 
     Calculation calc = { "Multiplication", expression, static_cast<double>(result) };
     history.push_back(calc);
@@ -222,7 +222,7 @@ void division()
     int num1, num2;
 
     // Prompt the user to enter the first number
-    cout << "Enter the First number: ";
+    cout << "\nEnter the First number: ";
 
     // Check if the input is not a valid numeric value
     if (!(cin >> num1))
@@ -258,7 +258,7 @@ void division()
     string expression = to_string(num1) + " / " + to_string(num2) + " = " + to_string(result);
 
     // Display the result of the division
-    cout << "Division of two numbers = " << result << endl;
+    cout << "\nDivision of the numbers = " << result << endl;
     
     Calculation calc = { "Division", expression, static_cast<double>(result) };
     history.push_back(calc);
@@ -269,7 +269,7 @@ void sqr()
     int num1;
 
     // Prompt the user to enter a number
-    cout << "Enter a number to find the Square: ";
+    cout << "\nEnter a number to find the Square: ";
 
     // Check if the input is not a valid numeric value
     if (!(cin >> num1))
@@ -299,7 +299,7 @@ void srt()
     float num1;
 
     // Prompt the user to enter a number
-    cout << "Enter the number to find the Square Root: ";
+    cout << "\nEnter the number to find the Square Root: ";
 
     // Check if the input is not a valid numeric value
     if (!(cin >> num1))
@@ -336,7 +336,7 @@ void exp()
     double base, exponent;
 
     // Prompt the user to enter the base
-    cout << "Enter the base: ";
+    cout << "\nEnter the base: ";
 
     // Check if the input is not a valid numeric value for the base
     if (!(cin >> base))
@@ -366,7 +366,7 @@ void exp()
     string expression = to_string(base) + " ^ " + to_string(exponent) + " = " + to_string(result);
 
     // Display the result of the exponentiation
-    cout << "Exponentiation result = " << result << endl;
+    cout << "\nExponentiation result = " << result << endl;
     
     Calculation calc = { "Exponentiation", expression, result };
     history.push_back(calc);
@@ -379,11 +379,11 @@ void showHistory()
     // Check if the history vector is empty
     if (history.empty())
     {
-        cout << "Calculation history is empty." << endl;
+        cout << "\nCalculation history is empty." << endl;
         return;
     }
 
-    cout << "Calculation History:" << endl;
+    cout << "\nCalculation History:\n" << endl;
 
     // Iterate through each Calculation object in the history vector
     for (const Calculation &calc : history)
